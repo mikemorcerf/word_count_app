@@ -5,11 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <header>
+      <%= render 'layouts/navbar' %>
+    </header>
+
+    <main>
+      <div class="mb-5 pb-1 pt-5">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="page-footer font-small bg-light fixed-bottom">
+      <%= render 'layouts/footer' %>
+    </footer>
+
   </body>
 </html>
