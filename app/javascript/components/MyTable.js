@@ -6,16 +6,22 @@ const data = [{ id: 1, title: 'Conan the Barbarian', year: '1982' }];
 const columns = [
   {
     name: 'Word',
-    selector: 'title',
+    selector: 'word',
     sortable: true,
     center: true
   },
   {
     name: 'Count',
-    selector: 'year',
+    selector: 'word_count',
     sortable: true,
     center: true
   },
+  {
+    name: 'Created at',
+    selector: 'created_at',
+    sortable: true,
+    center: true
+  }
 ];
 
 class MyTable extends React.Component {
@@ -26,7 +32,7 @@ class MyTable extends React.Component {
 			      <DataTable
 			        title="Word Count Table"
 			        columns={columns}
-			        data={data}
+			        data={this.props.generated_data}
 			      />
 				</div>
 			</React.Fragment>
@@ -34,4 +40,7 @@ class MyTable extends React.Component {
 	}
 }
 
+MyTable.propTypes = {
+  generated_data: PropTypes.any
+};
 export default MyTable

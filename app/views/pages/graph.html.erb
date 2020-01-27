@@ -2,7 +2,7 @@
 	<div class="mb-5 mt-5">
 		<h3>Data displayed from:</h3>
 		<p>Initial date to Final date</p>
-		<%= react_component("MyGraph") %>
-		<%= react_component("MyTable") %>
+		<%= react_component("MyGraph", {generated_data: retrieve_data_for_graph}) %>
+		<%= react_component("MyTable", {generated_data: retrieve_data_for_table}) %>
 	</div>
 </div>

@@ -12,14 +12,9 @@ class MyGraph extends React.Component {
 			  height={'400px'}
 			  chartType="PieChart"
 			  loader={<div>Loading Chart</div>}
-			  data={[
-			    ['Pizza', 'Popularity'],
-			    ['Pepperoni', 33],
-			    ['Hawaiian', 26],
-			    ['Mushroom', 22],
-			    ['Sausage', 10],
-			    ['Anchovies', 9],
-			  ]}
+			  data={
+				this.props.generated_data
+			  }
 			  options={{
 			    title: 'Number of times words were mentioned:',
 			    sliceVisibilityThreshold: 0,
@@ -33,6 +28,6 @@ class MyGraph extends React.Component {
 }
 
 MyGraph.propTypes = {
-  greeting: PropTypes.string
+  generated_data: PropTypes.any
 };
 export default MyGraph
