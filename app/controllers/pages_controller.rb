@@ -6,9 +6,12 @@ class PagesController < ApplicationController
   end
 
   def retrieve_data
-  	retrieved_data = Hash.new
-  	Datapoint.all.each do |dp|
-  		retrieve_data[dp.word] += dp.word_count
+  	my_retrieved_data = Datapoint.where(:created_at=>5.days.ago..Time.now)
+  	hash_retrieved_data = Hash.new
+  	my_retrieved_data.each do |dp|
+  		hash_retrieved_data[dp.word] = dp.word_count + hash_retrieved_data[dp.word].to_i
   	end
+  	return hash_retrieved_data.to_json
   end
+
 end
