@@ -2,10 +2,7 @@
 	<div class="mb-5 mt-5">
 		<h3>Data displayed from:</h3>
 		<p>Initial date to Final date</p>
-
-		<span id="graphPlace"></span>
-		<span id="tablePlace"></span>
+		<%= react_component("MyGraph") %>
+		<%= react_component("MyTable") %>
 	</div>
 </div>
-
-<%= javascript_pack_tag 'graph_table' %>
