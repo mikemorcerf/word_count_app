@@ -23,14 +23,15 @@ default: &default
 
 development:
   <<: *default
-  database: word_count_app_development
+  database: "word_count_app_development"
+  username: <%= ENV['POSTGRESQL_DATABASE_WORD_COUNT_APP_USERNAME'] %>
+  password: <%= ENV['POSTGRESQL_DATABASE_WORD_COUNT_APP_PASSWORD'] %>
 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: word_count_app
 
   # The password associated with the postgres role (username).
   #password:
