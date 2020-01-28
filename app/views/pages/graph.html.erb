@@ -8,9 +8,7 @@
 		end %>
 		<h3>Results from:</h3>
 		<p><%= initial_date %> to <%= last_date %></p>
-		
-
 		<%= react_component("MyGraph", {generated_data: retrieve_data_for_graph(initial_date, last_date)}) %>
 		<%= react_component("MyTable", {generated_data: retrieve_data_for_table(initial_date, last_date)}) %>
 	</div>
-</div>
+</div>	
