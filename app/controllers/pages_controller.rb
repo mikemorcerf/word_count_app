@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    if Datapoint.all.size < 7500
+    if Datapoint.all.size < 1
       generate_data
     end
   end
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   def generate_data
     array_of_words = ["houseflip", "home", "house", "building", "realstate"]
     min_num = 1
-    max_num = 1500
+    max_num = 1
     for i in min_num..max_num
       array_of_words.each do |single_word|
         my_word = Datapoint.new

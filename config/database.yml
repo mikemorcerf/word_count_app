@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: "word_count_app_development"
-  username: "word_count_app" #<%= ENV['POSTGRESQL_DATABASE_WORD_COUNT_APP_USERNAME'] %>
-  password: "password123" #<%= ENV['POSTGRESQL_DATABASE_WORD_COUNT_APP_PASSWORD'] %>
+  username: <%= ENV['POSTGRESQL_DATABASE_WORD_COUNT_APP_USERNAME'] %>
+  password: <%= ENV['POSTGRESQL_DATABASE_WORD_COUNT_APP_PASSWORD'] %>
 
 
   # The specified database role being used to connect to postgres.

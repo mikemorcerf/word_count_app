@@ -1,13 +1,15 @@
 <div class="container text-center">
 	<div class="mb-5 mt-5">
+		<% min_date = Datapoint.first.created_at %>
+		<% max_date = Datapoint.last.created_at %>
 		<% unless defined?(initial_date) 
-			initial_date = Datapoint.first.created_at
+			initial_date = min_date
 		end %>
 		<% unless defined?(last_date) 
-			last_date = Datapoint.last.created_at
+			last_date = max_date
 		end %>
 		<h3>Results from:</h3>
-		<p><%= initial_date %> to <%= last_date %></p>
+		<p><%= initial_date.strftime("%m/%d/%Y %H:%M") %> to <%= last_date.strftime("%m/%d/%Y %H:%M") %></p>
 		<%= react_component("MyGraph", {generated_data: retrieve_data_for_graph(initial_date, last_date)}) %>
 		<%= react_component("MyTable", {generated_data: retrieve_data_for_table(initial_date, last_date)}) %>
 	</div>
